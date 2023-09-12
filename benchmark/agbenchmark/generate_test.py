@@ -10,9 +10,9 @@ from typing import Any, Callable, Dict, Optional
 
 import pytest
 
-from benchmark.utils.challenge import Challenge
-from benchmark.utils.data_types import AgentBenchmarkConfig, ChallengeData, SuiteConfig
-from benchmark.utils.utils import get_test_path
+from agbenchmark.utils.challenge import Challenge
+from agbenchmark.utils.data_types import AgentBenchmarkConfig, ChallengeData, SuiteConfig
+from agbenchmark.utils.utils import get_test_path
 
 DATA_CATEGORY = {}
 

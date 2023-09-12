@@ -12,7 +12,7 @@ from typing import Any, List
 import psutil
 from dotenv import load_dotenv
 
-from benchmark.utils.data_types import AgentBenchmarkConfig
+from agbenchmark.utils.data_types import AgentBenchmarkConfig
 
 load_dotenv()
 
@@ -110,7 +110,7 @@ def get_list_of_file_paths(
 ) -> List[str]:
     # this file is at agbenchmark\agent_interface.py
     source_dir = os.path.join(
-        benchmark.start_benchmark.CURRENT_DIRECTORY,
+        agbenchmark.start_agbenchmark.CURRENT_DIRECTORY,
         "..",
         challenge_dir_path,
         artifact_folder_name,

@@ -6,12 +6,12 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Dict
 
-from benchmark.__main__ import BENCHMARK_START_TIME
-from benchmark.reports.processing.graphs import save_single_radar_chart
-from benchmark.reports.processing.process_report import get_agent_category
-from benchmark.reports.processing.report_types import Report
-from benchmark.utils.data_types import AgentBenchmarkConfig
-from benchmark.utils.utils import get_highest_success_difficulty
+from agbenchmark.__main__ import BENCHMARK_START_TIME
+from agbenchmark.reports.processing.graphs import save_single_radar_chart
+from agbenchmark.reports.processing.process_report import get_agent_category
+from agbenchmark.reports.processing.report_types import Report
+from agbenchmark.utils.data_types import AgentBenchmarkConfig
+from agbenchmark.utils.utils import get_highest_success_difficulty
 
 
 class ReportManager:

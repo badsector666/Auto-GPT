@@ -11,7 +11,7 @@ import pytest
 import toml
 from helicone.lock import HeliconeLockManager
 
-from benchmark.utils.data_types import AgentBenchmarkConfig
+from agbenchmark.utils.data_types import AgentBenchmarkConfig
 
 BENCHMARK_START_TIME = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S+00:00")
 

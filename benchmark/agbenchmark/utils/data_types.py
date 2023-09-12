@@ -77,7 +77,7 @@ def calculate_info_test_path(base_path: Path) -> Path:
 
 class AgentBenchmarkConfig(BaseModel):
     """
-    This class represents the configuration for the Agent Benchmark.
+    This class represents the configuration for the Agent agbenchmark.
     It includes the following attributes:
     - agent_benchmark_config_path: The path to the agent benchmark config that this object was created from.
     - entry_path: The path to the entry point of the benchmark for the agent, relative to the agent_benchmark_config_path.

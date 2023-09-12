@@ -10,15 +10,15 @@ from typing import Any, Dict, List
 import openai
 import pytest
 
-from benchmark.agent_api_interface import run_api_agent
-from benchmark.utils.data_types import ChallengeData, Ground, AgentBenchmarkConfig
-from benchmark.utils.prompts import (
+from agbenchmark.agent_api_interface import run_api_agent
+from agbenchmark.utils.data_types import ChallengeData, Ground, AgentBenchmarkConfig
+from agbenchmark.utils.prompts import (
     END_PROMPT,
     FEW_SHOT_EXAMPLES,
     PROMPT_MAP,
     SCORING_MAP,
 )
-from benchmark.utils.utils import agent_eligibible_for_optional_categories
+from agbenchmark.utils.utils import agent_eligibible_for_optional_categories
 
 
 class Challenge(ABC):
@@ -47,7 +47,7 @@ class Challenge(ABC):
         return self.data.dependencies
 
     async def setup_challenge(self, config: Dict[str, Any], cutoff: int) -> None:
-        from benchmark.agent_interface import copy_artifacts_into_workspace, run_agent
+        from agbenchmark.agent_interface import copy_artifacts_into_workspace, run_agent
 
         artifact_paths = [
             self.ARTIFACTS_LOCATION,
@@ -309,7 +309,7 @@ class Challenge(ABC):
         challenge_category = self.data.category
         categories = [
             category
-            for category in benchmark.start_benchmark.OPTIONAL_CATEGORIES
+            for category in agbenchmark.start_agbenchmark.OPTIONAL_CATEGORIES
             if category in challenge_category
         ]
         if not agent_eligibible_for_optional_categories(

@@ -9,10 +9,10 @@ from typing import Any, List, Optional
 import git
 from dotenv import load_dotenv
 
-from benchmark.utils.data_types import calculate_info_test_path
+from agbenchmark.utils.data_types import calculate_info_test_path
 
 load_dotenv()
-from benchmark.utils.data_types import DIFFICULTY_MAP, DifficultyLevel
+from agbenchmark.utils.data_types import DIFFICULTY_MAP, DifficultyLevel
 
 AGENT_NAME = os.getenv("AGENT_NAME")
 REPORT_LOCATION = os.getenv("REPORT_LOCATION", None)

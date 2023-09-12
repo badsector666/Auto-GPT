@@ -4,15 +4,15 @@ import sys
 from pathlib import Path
 from typing import Any, Dict
 
-from benchmark.reports.ReportManager import ReportManager
-from benchmark.utils.data_types import (
+from agbenchmark.reports.ReportManager import ReportManager
+from agbenchmark.utils.data_types import (
     DIFFICULTY_MAP,
     AgentBenchmarkConfig,
     DifficultyLevel,
     SuiteConfig,
 )
-from benchmark.utils.get_data_from_helicone import get_data_from_helicone
-from benchmark.utils.utils import (
+from agbenchmark.utils.get_data_from_helicone import get_data_from_helicone
+from agbenchmark.utils.utils import (
     calculate_success_percentage,
     get_highest_success_difficulty,
     get_test_path,

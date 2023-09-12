@@ -9,8 +9,8 @@ from pathlib import Path  # noqa
 from typing import Any, Dict, Generator
 
 import pytest
-from benchmark.utils.data_types import AgentBenchmarkConfig, SuiteConfig
-from benchmark.reports.reports import (
+from agbenchmark.utils.data_types import AgentBenchmarkConfig, SuiteConfig
+from agbenchmark.reports.reports import (
     finalize_reports,
     generate_combined_suite_report,
     generate_single_call_report,
@@ -21,7 +21,7 @@ GLOBAL_TIMEOUT = (
     1500  # The tests will stop after 25 minutes so we can send the reports.
 )
 
-pytest_plugins = ["benchmark.utils.dependencies"]
+pytest_plugins = ["agbenchmark.utils.dependencies"]
 collect_ignore = ["challenges"]
 
 
@@ -476,7 +476,7 @@ def pytest_collection_modifyitems(items: Any, config: Any) -> None:
 def run_agent(request: Any) -> Any:
     """
     This pytest fixture is responsible for running the agent. It is automatically used in every test session due to the 'autouse=True' parameter and 'session' scope.
-    If the "--api_mode" argument is not in the command line arguments, it starts a subprocess running the benchmark.
+    If the "--api_mode" argument is not in the command line arguments, it starts a subprocess running the agbenchmark.
     The subprocess is terminated after the test session.
     If the "--api_mode" argument is present, it simply yields control back to the test session.
     This fixture is essential for the pytest system as it provides the necessary setup and teardown for running the agent in each test session.
@@ -489,7 +489,7 @@ def run_agent(request: Any) -> Any:
     """
     agent_benchmark_config_path = request.config.getoption("--agent_config_path")
     if "--api_mode" not in sys.argv:
-        command = [sys.executable, "-m", "benchmark.benchmarks"]
+        command = [sys.executable, "-m", "agbenchmark.benchmarks"]
         process = subprocess.Popen(
             command,
             stdout=subprocess.PIPE,
